@@ -28,14 +28,14 @@ namespace CreditCardApplications
                 return CreditCardApplicationDecision.AutoAccepted;
             }
 
-            if(application.Age <= AutoReferralMaxAge)
-            {
-                return CreditCardApplicationDecision.ReferredToAgent;
-            }
-
-            if(application.GrossAnnualIncome < LowIncomeThreshold)
+            if (application.GrossAnnualIncome < LowIncomeThreshold)
             {
                 return CreditCardApplicationDecision.AutoDeclined;
+            }
+
+            if (application.Age <= AutoReferralMaxAge)
+            {
+                return CreditCardApplicationDecision.ReferredToAgent;
             }
 
             return CreditCardApplicationDecision.ReferredToAgent;
